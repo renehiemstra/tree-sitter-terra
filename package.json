@@ -2,7 +2,7 @@
   "name": "tree-sitter-terra",
   "version": "0.0.0",
   "description": "Tree-sitter parser for the terra language",
-  "main": "index.js",
+  "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
     "test": "test",
