@@ -1,0 +1,61 @@
+{
+  "name": "tree-sitter-terra",
+  "version": "0.0.0",
+  "description": "Tree-sitter parser for the terra language",
+  "main": "index.js",
+  "types": "bindings/node",
+  "scripts": {
+    "test": "test",
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip",
+    "build": "tree-sitter generate --no-bindings",
+    "build-wasm": "tree-sitter build-wasm",
+    "parse": "tree-sitter parse"
+  },
+  "keywords": [
+    "tree-sitter",
+    "parser",
+    "lua",
+    "terra"
+  ],
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "author": "Rene Hiemstra",
+  "license": "MIT",
+  "dependencies": {
+    "node-gyp-build": "^4.8.0",
+    "node-addon-api": "^7.1.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "prebuildify": "^6.0.0",
+    "tree-sitter-cli": "^0.22.2"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.t",
+      "file-types": [
+        "lua",
+        "t"
+      ],
+      "highlights": [
+        "node_modules/tree-sitter-c/queries/highlights.scm",
+        "queries/highlights.scm"
+      ],
+      "injections": "queries/injections.scm"
+    }
+  ]
+}
